@@ -75,7 +75,7 @@ redirect "/figures/#{id}"
 end
 
 
-end
+
 
 
 get '/figures/:id/edit' do
