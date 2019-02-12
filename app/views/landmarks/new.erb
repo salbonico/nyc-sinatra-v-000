@@ -15,7 +15,7 @@
 
 
 <% Figure.all.each do |figure| %>
-  <input id="figure_<%= figure.id %>" type="radio" name="landmark[figure_id]" value="<%= landmark.id %>"><%= landmark.name %></input>
+  <input id="figure_<%= figure.id %>" type="radio" name="landmark[figure_id]" value="<%= figure.id %>"><%= figure.name %></input>
 <% end %>
 
 <br><br>
