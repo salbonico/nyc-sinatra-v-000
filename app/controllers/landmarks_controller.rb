@@ -11,7 +11,7 @@ class LandmarksController < ApplicationController
   end
 
   post 'landmarks' do
-    newlandmark = Landmark.create(:name => params["landmark"]["name"], :year_completed => params["landmark"]["year_completed"], :figure_id => params["figure"]["figure_id"])
+    newlandmark = Landmark.create(:name => params["landmark"]["name"], :year_completed => params["landmark"]["year_completed"], :figure_id => params["landmark"]["figure_id"])
     if params["title"]["name"] != ""
       if Title.find{|title| title.name == params["title"]["name"]}
           titleinput = Title.find{|title| title.name == params["title"]["name"]}
