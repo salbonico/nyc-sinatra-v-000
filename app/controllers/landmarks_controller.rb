@@ -25,8 +25,8 @@ class LandmarksController < ApplicationController
     end
 
     end
-  id = newfigure.id
-  redirect "/figures/#{id}"
+  id = newlandmark.id
+  redirect "/landmarks/#{id}"
   end
 
 
