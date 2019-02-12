@@ -45,6 +45,7 @@ if !params.keys.include?("genres")
     params[:genre] = []
     end
 ###/bugfix
+newlandmark = Landmark.find(params[:id])
 newlandmark.update(:name => params["landmark"]["name"], :year_completed => params["landmark"]["year_completed"], :figure_id => params["landmark"]["figure_id"])
 if params["figure"]["name"] != ""
   if Figure.find{|figure| figure.name == params["figure"]["name"]}
