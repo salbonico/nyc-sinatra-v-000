@@ -23,8 +23,6 @@ class LandmarksController < ApplicationController
           newlandmark.save
       end
     end
-
-
   id = newlandmark.id
   redirect "/landmarks/#{id}"
   end
