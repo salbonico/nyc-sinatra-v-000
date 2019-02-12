@@ -39,7 +39,7 @@ get '/landmarks/:id' do
   erb :'/landmarks/show'
 end
 
-patch '/landmark/:id' do
+patch '/landmarks/:id' do
   ###bugfix
 if !params.keys.include?("genres")
     params[:genre] = []
