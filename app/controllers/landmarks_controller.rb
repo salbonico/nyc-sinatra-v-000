@@ -39,6 +39,27 @@ get '/landmarks/:id' do
   erb :'/landmarks/show'
 end
 
+patch '/landmark/:id' do
+  ###bugfix
+if !params.keys.include?("genres")
+    params[:genre] = []
+    end
+###/bugfix
+newlandmark.update(:name => params["landmark"]["name"], :year_completed => params["landmark"]["year_completed"], :figure_id => params["landmark"]["figure_id"])
+if params["figure"]["name"] != ""
+  if Figure.find{|figure| figure.name == params["figure"]["name"]}
+      figureinput = Figure.find{|figure| figure.name == params["figure"]["name"]}
+      newlandmark.figure_id = figureinput.id
+      newlandmark.save
+  else
+      tempfigure = Figure.create(:name => params["figure"]["name"])
+      newlandmark.figure_id = tempfigure.id
+      newlandmark.save
+  end
+end
+id = newlandmark.id
+redirect "/landmarks/#{id}"
 
+end
 
 end
