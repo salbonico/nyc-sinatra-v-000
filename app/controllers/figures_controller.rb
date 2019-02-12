@@ -39,6 +39,9 @@ class FiguresController < ApplicationController
   redirect "/figures/#{id}"
 end
 
+patch '/figures/:id' do
+  
+end
 
 
 get '/figures/:id/edit' do
