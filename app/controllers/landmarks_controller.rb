@@ -15,8 +15,8 @@ class LandmarksController < ApplicationController
     if params["figure"]["name"] != ""
       if Figure.find{|figure| figure.name == params["figure"]["name"]}
           figureinput = Figure.find{|figure| figure.name == params["figure"]["name"]}
-          newfigure.title_ids = titleinput.id
-          newfigure.save
+          newlandmark.figure_id = figureinput.id
+          newlandmark.save
       else
           temptitle = Title.create(:name => params["title"]["name"])
           newfigure.title_ids = temptitle.id
