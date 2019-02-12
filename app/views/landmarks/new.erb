@@ -12,7 +12,7 @@
 <label for="landmark_year">Landmark Year Completed:</label>
 <input id="landmark_year" type="text" name="landmark[year]">
 
-
+<h1>Add a Figure</h1>
 
 <% Figure.all.each do |figure| %>
   <input id="figure_<%= figure.id %>" type="radio" name="landmark[figure_id]" value="<%= figure.id %>"><%= figure.name %></input>
