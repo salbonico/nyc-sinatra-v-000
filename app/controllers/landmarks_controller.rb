@@ -10,7 +10,7 @@ class LandmarksController < ApplicationController
     erb :'/landmarks/new'
   end
 
-  post 'landmarks' do
+  post '/landmarks' do
     newlandmark = Landmark.create(:name => params["landmark"]["name"], :year_completed => params["landmark"]["year_completed"], :figure_id => params["landmark"]["figure_id"])
     if params["figure"]["name"] != ""
       if Figure.find{|figure| figure.name == params["figure"]["name"]}
