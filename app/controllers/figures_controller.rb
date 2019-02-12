@@ -46,7 +46,9 @@ if !params.keys.include?("genres")
     end
 ###/bugfix
 
-newfigure = Figure.update(:name => params["figure"]["name"], :title_ids => params["figure"]["title_ids"], :landmark_ids => params["figure"]["landmark_ids"])
+newfigure = Figure.find(params[:id])
+
+.update(:name => params["figure"]["name"], :title_ids => params["figure"]["title_ids"], :landmark_ids => params["figure"]["landmark_ids"])
 if params["title"]["name"] != ""
   if Title.find{|title| title.name == params["title"]["name"]}
       titleinput = Title.find{|title| title.name == params["title"]["name"]}
