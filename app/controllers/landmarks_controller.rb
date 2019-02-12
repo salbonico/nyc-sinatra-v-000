@@ -18,9 +18,9 @@ class LandmarksController < ApplicationController
           newlandmark.figure_id = figureinput.id
           newlandmark.save
       else
-          temptitle = Title.create(:name => params["title"]["name"])
-          newfigure.title_ids = temptitle.id
-          newfigure.save
+          tempfigure = Figure.create(:name => params["figure"]["name"])
+          newlandmark.figure_id = tempfigure.id
+          newlandmark.save
       end
     end
 
