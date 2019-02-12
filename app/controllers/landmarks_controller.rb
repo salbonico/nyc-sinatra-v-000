@@ -24,16 +24,6 @@ class LandmarksController < ApplicationController
       end
     end
 
-    if params["landmark"]["name"] != ""
-      if Landmark.find{|landmark| landmark.name == params["landmark"]["name"]}
-        landmarkinput = Landmark.find{|landmark| landmark.name == params["landmark"]["name"]}
-        newfigure.landmark_ids = landmarkinput.id
-        newfigure.save
-      else
-        templandmark = Landmark.create(:name => params["landmark"]["name"], :year_completed => params["landmark"]["year"])
-        newfigure.landmark_ids = templandmark.id
-        newfigure.save
-      end
     end
   id = newfigure.id
   redirect "/figures/#{id}"
